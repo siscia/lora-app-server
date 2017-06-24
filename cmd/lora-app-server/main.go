@@ -205,7 +205,7 @@ func mustGetContext(c *cli.Context) common.Context {
 		DB:            db,
 		RedisPool:     rp,
 		NetworkServer: ns.NewNetworkServerClient(nsConn),
-		Handler:       h,
+		Handler:       handler.NewMultiHandler(db, h),
 	}
 }
 
